@@ -93,7 +93,6 @@ class Apple:
 
     def createNewApple(self):
         self.appleX = random.randrange(1, boardWidth - 2)
-        self.appleY = random.randrange(1, Height - 2)
 
 class GameLoop:
     def repaint(self):
@@ -120,7 +119,7 @@ class GameLoop:
 
         else:   # GameOver Message
             canvas.delete(ALL)
-            canvas.create_text(150, 100, fill="lightblue", font="Times 20 italic bold", text="GameOver!")
+            canvas.create_text(150, 100, fill="lightblue", font="Times 20 italic bold", text="Game Over!")
             canvas.create_text(150, 150, fill="lightblue", font="Times 20 italic bold",
                                    text="Points:" + str(snake.getPoints()))
          
@@ -139,4 +138,4 @@ gameLoop.repaint()
 root.title("Snake")
 root.bind('<KeyPress>', snake.getKey)
 root.mainloop()
-           
+
