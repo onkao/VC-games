@@ -67,11 +67,11 @@ class Snake():
         if event.char == "u" or event.char == "r" or event.char == "d" or event.char == "l" or event.char == " ":
             self.key = event.char
 
-    def getSnakeX(self, index):
-        return self.snakeX[index]
+    def getSnakeX(self, event):
+        return self.snakeX[event]
 
-    def getSnakeY(self, index):
-        return self.snakeY[index]
+    def getSnakeY(self, event):
+        return self.snakeY[event]
 
     def getSnakeLength(self):
         return self.snakeLength
@@ -120,8 +120,7 @@ class GameLoop:
         else:   # GameOver Message
             canvas.delete(ALL)
             canvas.create_text(150, 100, fill="lightblue", font="Times 20 italic bold", text="Game Over!")
-            canvas.create_text(150, 150, fill="lightblue", font="Times 20 italic bold",
-                                   text="Points:" + str(snake.getPoints()))
+            canvas.create_text(150, 150, fill="lightblue", font="Times 20 italic bold",text="Points:" + str(snake.getPoints()))
          
 
 snake = Snake()
